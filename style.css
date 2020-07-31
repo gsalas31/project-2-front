@@ -77,33 +77,99 @@ p{
 /*-------WRITTERS SECTION-----------------------------------------*/
 
 
-   
+.allwritters{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .secondsection{
     display: flex;
     text-align: center;
 }
 .firstwritter{
-    position: absolute;
+    
     display: flex;
     flex-direction: column;
-    height: 600px;
+    height: 400px;
     width: 300px;
     align-content: center;
-    margin: 50px;
+    
 }
 #paulo{
     align-self: center;
     width: 200px;
     height: auto;
 }
-
-
-
-
-
-
-
-
+.secondwritter{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 300px;
+    align-content: center;
+  
+}
+#gabriel{
+    align-self: center;
+    width: 200px;
+    height: auto;
+}
+.thirdwritter{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 300px;
+    align-content: center;
+  
+}
+#benedetti{
+    align-self: center;
+    width: 200px;
+    height: auto;
+}
+.fourthwritter{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 300px;
+    align-content: center;
+  
+}
+#neruda{
+    align-self: center;
+    width: 200px;
+    height: auto;
+}
+.fifthwritter{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 300px;
+    align-content: center;
+  
+}
+#mistral{
+    align-self: center;
+    width: 200px;
+    height: auto;
+}
+.sixthwritter{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    width: 300px;
+    align-content: center;
+  
+}
+#isabel{
+    align-self: center;
+    width: 200px;
+    height: auto;
+}
 
 /*-------FOOTER SECTION------------------------------------------*/
 footer{
