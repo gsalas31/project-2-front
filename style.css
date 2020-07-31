@@ -36,11 +36,13 @@ ul{
     justify-content: center;
 
 }
-img{
+/*background img*/
+#backgroundimg{
     display: flex;
     width: 100%;
     margin: 0 auto;
 }
+/*about us tittle and paragraph description */
 .text{
     position: absolute;
     text-align: center;
@@ -63,11 +65,35 @@ p{
     color: rgb(255,255,255) ;
     font-size: 20px;
 }
+/*enclosing div for about us and paragraph*/
 .paragraph{
     background-color: rgba(194, 192, 192, 0.5) ;
     padding:20px;
     width: 800px;
     height: 400px;
+}
+
+
+/*-------WRITTERS SECTION-----------------------------------------*/
+
+
+   
+.secondsection{
+    display: flex;
+    text-align: center;
+}
+.firstwritter{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    width: 400px;
+    align-content: center;
+    margin: 50px;
+}
+#paulo{
+    height: 560px;
+    width: auto;
 }
 
 
@@ -78,7 +104,7 @@ p{
 
 
 
-
+/*-------FOOTER SECTION------------------------------------------*/
 footer{
     background-color: rgb(175,171,171) ;
     display: flex;
