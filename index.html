@@ -8,11 +8,11 @@
     crossorigin="anonymous" defer></script>
     <script src="app.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="hamburger.css">
     <title>Document</title>
 </head>
 <body>
     <nav>
-        <div class="imga"></div>
         <div class="menu">
             <input type="checkbox" class="toggler">
             <div class="ham">
@@ -20,11 +20,11 @@
             </div>
             <div class="listanav">
                 <div>
-                    <div>
+                    <div class="menulist"> 
                         <ul class="menuar">
-                            <li><a class="animatedbar" href="#abooutme">Home</a></li>
-                            <li><a class="animatedbar"href="#projects">Authors</a></li>
-                            <li><a class="animatedbar"href="#contact">Find Your Book</a></li>
+                            <li><a class="animatedbar"href="#main">Home</a></li>
+                            <li><a class="animatedbar"href="#authors">Authors</a></li>
+                            <li><a class="animatedbar"href="#find">Find Your Book</a></li>
                         </ul>
                     </div>
                 </div>  
@@ -35,7 +35,7 @@
 
 
     <div class="aboutus">
-        <div class="text">
+        <div class="text" id="main">
         <h1>SELENE</h1>
         <div class="paragraph">
         <h2>ABOUT US</h2>
@@ -47,7 +47,7 @@
 
 
 
-    <div class="secondsection">
+    <div class="secondsection" id="authors">
         <img src="second.jpg" id="backgroundimg" alt="">
 
 
@@ -87,7 +87,7 @@
 
 
     <div class="">
-        <div class="whattoread">
+        <div class="whattoread" id="find">
             <h3>FIND YOUR BOOK</h3>
             <p>Find your next good read</p>
             
@@ -104,6 +104,13 @@
 
     <footer>
         <h4>SELENE</h4>
+        <div class="icons">
+            <div><img src="/icons/gitwhite.png" id="" alt=""></div>
+            <div><img src="/icons/linkedinwhi.png" id="linkedin" alt=""></div>
+            <div><img src="/icons/wordwhite.png" id="wordpress" alt=""></div>
+        </div>
+        
+        
     </footer>
     
 </body>
