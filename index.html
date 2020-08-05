@@ -23,7 +23,7 @@
                     <div class="menulist"> 
                         <ul class="menuar">
                             <li><a class="animatedbar"href="#main">Home</a></li>
-                            <li><a class="animatedbar"href="#authors">Authors</a></li>
+                            <li><a class="animatedbar"href="#authorss">Authors</a></li>
                             <li><a class="animatedbar"href="#find">Find Your Book</a></li>
                         </ul>
                     </div>
@@ -36,26 +36,44 @@
 
     <div class="aboutus">
         <div class="text" id="main">
-        <h1>SELENE</h1>
-        <div class="paragraph">
-        <h2>ABOUT US</h2>
-        <p>A place where you can share your favorite quotes from your favorite writers. A plattform where you can find what other people are sharing. Find a good book to read or a poem for your every day use. And if you feel like we are missing your favorite writer, send us his/her name and the title of their literary work and we will be adding them for you.</p>
+            <h1>SELENE</h1>
+            <div class="paragraph">
+                <h2>ABOUT US</h2>
+                <p>A place where you can share your favorite quotes from your favorite writers. A plattform where you can find what other people are sharing. Find a good book to read or a poem for your every day use. And if you feel like we are missing your favorite writer, send us his/her name and the title of their literary work and we will be adding them for you.</p>
+            </div>
+            <div class="quotesshowcase" id="quoteshow">
+
+            </div>
+            <div>
+                <p id="editquote">Upload, Delete and Update your quote:</p>
+                <input type="url" name="url" id="url" placeholder="https://example.com" pattern="https://.*" size="30"/>
+                <button id="create">Create</button>
+                <button id="delete">Delete</button>
+                <button class="edit">Edit</button>
+            </div>
         </div>
-        <div class="quotesshowcase" id="quoteshow">
-        </div>
-        </div>
-        <img src="first.jpg" id="backgroundimg" alt="">
+        <img src="first.jpg" class="backgroundimg" alt="">
     </div> 
 
 
 
-    <div class="secondsection" id="authors">
-        <img src="second.jpg" id="backgroundimg" alt="">
-        <div class="allwriters">
-        </div> 
+    <div class="secondsection">
+
+        <!--<div class="flip-box">-->
+            <!--<div class="flip-box-inner">-->
+                <div class="allwriters flip-box-front" id="authorss" >
+                </div> 
+                <!--<div class="flip-box-back">-->
+                    
+              <!--</div>
+            </div>
+      </div>-->
+
+        <img src="second.jpg" class="backgroundimg">
     </div> 
 
-    <div class="">
+
+    <div>
         <div class="whattoread">
             <h3>FIND YOUR BOOK</h3>
             <h5 id="find">Find your next good read:</h5>
@@ -78,7 +96,7 @@
                 </div>
             </div>
         </div>
-        <img src="third.jpg" id="backgroundimg" alt="">
+        <img src="third.jpg" class="backgroundimg" alt="">
     </div> 
 
 

@@ -2,9 +2,12 @@ const deployedURL = null // "https://selene31.herokuapp.com";
 const URL = deployedURL ? deployedURL : "http://localhost:3000";
 
 //Global variables 
-
+const deleteButton = document.getElementById('delete')
+let quoteBeingEdited = ''
 
 //Functions
+
+/*------------------------------------------------------------------------------------------------------------*/
 //displaying books
 
 const getBooks = async ()=>{ 
@@ -21,7 +24,10 @@ const getBooks = async ()=>{
 }
 getBooks()
 
+// display message when selecting a book
 
+
+/*------------------------------------------------------------------------------------------------------------*/
 
 //displaying poems
 
@@ -38,7 +44,7 @@ const allPoems = async ()=>{
 }
 allPoems()
 
-
+/*------------------------------------------------------------------------------------------------------------*/
 
 //display quotes 
 const allQuotes = async ()=>{
@@ -46,17 +52,61 @@ const allQuotes = async ()=>{
     const data = await response.json()
     console.log(data)
 
-    data.forEach((quote)=>{
-        const $div =$('<div class="quotediv">').text(quote.updatedAt)
-        $('.quotesshowcase').append($div);
+    $('.quotesshowcase').empty()
 
-        const $img = $(`<img src="${quote.quoteURL}">`).addClass("userquotes")
-        $('.quotediv').append($img)
+    data.forEach((quote)=>{
+        const $div =$('<div class="quotediv">')
+        const $img = $(`<img src="${quote.quoteURL}">`).addClass("userquotes").attr('id',quote._id)
+        $div.append($img)
+        $('.quotesshowcase').append($div);
     })
 }
 allQuotes()
 
+//creating quotes*/
 
+const createQuote = async()=>{
+    const url= $('#url').val() 
+    const newQuote = {
+        quoteURL:url
+    }
+
+    const response = await fetch(`${URL}/quotes`,{
+        method:"post",
+        headers:{
+            'Content-Type':'application/json'
+        },
+        body:JSON.stringify(newQuote)
+    })
+    console.log(await response)
+    allQuotes()
+    $('#url').val('')
+    }
+
+$('#create').on('click', createQuote)
+
+//deleting quotes*/
+
+const deleteQuote = async (event) => {
+
+
+
+    const response = await fetch(`${URL}/quotes/${event.target.id}`, {
+      method: "delete"
+    })
+
+  }
+  $('#delete').on('click', deleteQuote)
+  $('#url').on()
+
+
+// Edit a Quote 
+
+
+
+
+
+/*------------------------------------------------------------------------------------------------------------*/
 
 //display writers 
 const allWriters = async ()=>{
@@ -65,12 +115,27 @@ const allWriters = async ()=>{
     console.log(data)
 
     data.forEach((writer)=>{
-        const $div =$('<div class="writerdiv">')
-        $('.allwriters').append($div)
-
+        
         const $img = $(`<img src="${writer.portrait}">`).addClass("imgauthor")
-        $('.writerdiv').append($img)
-        console.log(writer.portrait)
+        $('.allwriters').append($img)
+        //console.log(writer.portrait)  
     })
 }
 allWriters()
+
+/*------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+/*const allFlip = async ()=>{
+    const response = await fetch(`${URL}/writers`)
+    const data = await response.json()
+    console.log(data)
+
+    data.forEach((writer)=>{
+        const $h6 = $('<h2 id="nameofauthor">').text(writer.name)
+        $(".flip-box-back").append($h6)
+})
+}
+allFlip()*/
