@@ -98,7 +98,7 @@ p{
 /*-------WRITTERS SECTION-----------------------------------------*/
 
 
-.allwritters{
+.allwriters{
     position: absolute;
     display: flex;
     flex-direction: row;
@@ -112,7 +112,7 @@ p{
     display: flex;
     text-align: center;
 }
-.firstwritter{
+.firstwriter{
     
     display: flex;
     flex-direction: column;
@@ -126,7 +126,7 @@ p{
     width: 200px;
     height: auto;
 }
-.secondwritter{
+.secondwriter{
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -139,7 +139,7 @@ p{
     width: 200px;
     height: auto;
 }
-.thirdwritter{
+.thirdwriter{
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -152,7 +152,7 @@ p{
     width: 200px;
     height: auto;
 }
-.fourthwritter{
+.fourthwriter{
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -165,7 +165,7 @@ p{
     width: 200px;
     height: auto;
 }
-.fifthwritter{
+.fifthwriter{
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -178,7 +178,7 @@ p{
     width: 200px;
     height: auto;
 }
-.sixthwritter{
+.sixthwriter{
     display: flex;
     flex-direction: column;
     height: 400px;
@@ -225,6 +225,9 @@ h5{
     flex-direction: column;
     left:0;
     padding-left: 40px;
+}
+.form{
+    margin-top: 20px;
 }
 #type{
     color: black;
