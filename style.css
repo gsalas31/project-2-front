@@ -105,91 +105,25 @@ p{
     width: 100%;
     height: 100%;
     margin-top: 60px;
-    flex-wrap: wrap;
+ 
     justify-content: center;
 }
 .secondsection{
     display: flex;
     text-align: center;
 }
-.firstwriter{
-    
+
+#imgauthor{
+    align-self: center;
+    width: 200px;
+    height: auto   
+}
+.writerdiv{
     display: flex;
     flex-direction: column;
     height: 400px;
     width: 300px;
-    align-content: center;
-    
-}
-#paulo{
-    align-self: center;
-    width: 200px;
-    height: auto;
-}
-.secondwriter{
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: 300px;
-    align-content: center;
-  
-}
-#gabriel{
-    align-self: center;
-    width: 200px;
-    height: auto;
-}
-.thirdwriter{
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: 300px;
-    align-content: center;
-  
-}
-#benedetti{
-    align-self: center;
-    width: 200px;
-    height: auto;
-}
-.fourthwriter{
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: 300px;
-    align-content: center;
-  
-}
-#neruda{
-    align-self: center;
-    width: 200px;
-    height: auto;
-}
-.fifthwriter{
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: 300px;
-    align-content: center;
-  
-}
-#mistral{
-    align-self: center;
-    width: 200px;
-    height: auto;
-}
-.sixthwriter{
-    display: flex;
-    flex-direction: column;
-    height: 400px;
-    width: 300px;
-    align-content: center;
-  
-}
-#isabel{
-    align-self: center;
-    width: 200px;
-    height: auto;
+    align-content: center
 }
 /*------WHAT TO READ SECTION-----------------------------------------------*/
 

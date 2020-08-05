@@ -10,12 +10,12 @@ const URL = deployedURL ? deployedURL : "http://localhost:3000";
 const getBooks = async ()=>{ 
     const response = await fetch(`${URL}/books`)
     const data = await response.json()
-    console.log(data)
+    //console.log(data)
 
     data.forEach((book)=>{
         const $option =$('<option>').attr('value', book._id).text(book.title)
         $('#selectbook').append($option)
-          console.log(book.title)
+         // console.log(book.title)
     })
 
 }
@@ -28,12 +28,12 @@ getBooks()
 const allPoems = async ()=>{
     const response = await fetch(`${URL}/poems`)
     const data = await response.json()
-    console.log(data)
+    //console.log(data)
 
     data.forEach((poem)=>{
         const $option =$('<option>').attr('value', poem._id).text(poem.title)
         $('#selectpoem').append($option)
-         console.log(poem.title)
+         //console.log(poem.title)
     })
 }
 allPoems()
@@ -65,11 +65,12 @@ const allWriters = async ()=>{
     console.log(data)
 
     data.forEach((writer)=>{
-        const $div =$('<div class="quotediv">').text(quote.updatedAt)
-        $('.quotesshowcase').append($div);
+        const $div =$('<div class="writerdiv">')
+        $('.allwriters').append($div)
 
-        const $img = $(`<img src="${quote.quoteURL}">`).addClass("userquotes")
-        $('.quotediv').append($img)
+        const $img = $(`<img src="${writer.portrait}">`).addClass("imgauthor")
+        $('.writerdiv').append($img)
+        console.log(writer.portrait)
     })
 }
-allQuotes()
+allWriters()
