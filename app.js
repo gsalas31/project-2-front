@@ -16,20 +16,26 @@ const getBooks = async ()=>{
         $('#selectbook').append($option)
          // console.log(book.title)
     })
-
 }
 getBooks()
 
 // display message when selecting a book
 
-$('.createbuttonbook').on('click', ()=>{
-    let theBook= $("#selectbook option:selected" ).text()
-    const outcomeBook = $('<p id="textbook">').text(`You have chosen ${theBook}`)
-    $('#specificbook').append(outcomeBook)
-  
-})  
+const showBook = async ()=>{
 
+    let theBook= $("#selectbook option:selected" ).val()
+    const response = await fetch(`${URL}/books/${theBook}`)
+    const data = await response.json()
+    console.log(data)
 
+    const outcomeBook = $('<p id="textbook">').text(`You have chosen ${data.title} written by ${data.writer.name}`)
+    const outcomeBook2 = $("<p id='biowriter'>").text(`Biography: ${data.writer.bio.description}`)
+    $('.infofrombook').empty()
+    $('.infofrombook').append(outcomeBook)
+    $('.infofrombook').append(outcomeBook2)
+
+}
+    $('.createbuttonbook').on('click', showBook)
 
 /*------------------------------------------------------------------------------------------------------------*/
 
@@ -39,7 +45,7 @@ const allPoems = async ()=>{
     const response = await fetch(`${URL}/poems`)
     const data = await response.json()
     //console.log(data)
-
+    
     data.forEach((poem)=>{
         const $option =$('<option>').attr('value', poem._id).text(poem.title)
         $('#selectpoem').append($option)
@@ -49,12 +55,20 @@ const allPoems = async ()=>{
 allPoems()
 
 // display message when selecting a poem
+const showPoem = async ()=>{
 
-$('.createbuttonpoem').on('click', ()=>{
-    let thePoem= $("#selectpoem option:selected" ).text()
-    const outcomePoem = $('<p id="textpoem">').text(`You have chosen ${thePoem}`)
-    $('specificpoem').append(outcomePoem)
-}) 
+    let thePoem= $("#selectpoem option:selected" ).val()
+    const response = await fetch(`${URL}/poems/${thePoem}`)
+    const data = await response.json()
+    console.log(data)
+
+    const outcomePoem = $('<p id="textbook">').text(`You have chosen ${data.title}`)
+    $('.infofrombook').empty()
+    $('.infofrombook').append(outcomePoem)
+
+}
+$('#createbuttonpoem').on('click', showPoem)
+
 /*------------------------------------------------------------------------------------------------------------*/
 
 //display quotes 
@@ -67,7 +81,11 @@ const allQuotes = async ()=>{
 
     data.forEach((quote)=>{
         const $div =$('<div class="quotediv">')
-        const $img = $(`<img src="${quote.quoteURL}">`).addClass("userquotes").attr('id',quote._id)
+        const $img = $(`<img src="${quote.quoteURL}">`)
+            .addClass("userquotes")
+            .attr('id',quote._id)
+            .on('click', getTheId)
+
         $div.append($img)
         $('.quotesshowcase').append($div);
     })
@@ -96,22 +114,35 @@ const createQuote = async()=>{
 
 $('#create').on('click', createQuote)
 
+
 //deleting quotes*/
+
 const deleteQuote = async (event) => {
-    //getTheId()
-    const response = await fetch(`${URL}/quotes/${event.target.id}`, {
-    method: "delete"
-    })
-    event.target.remove()
+
+    if ($('#delete').attr('data-quoteid') !== '') {
+        const response = await fetch(`${URL}/quotes/${event.target.dataset.quoteid}`, {
+        method: "delete"
+        })
+        
+        allQuotes()
+        $('#url').val('')
+        $('#delete').attr('data-quoteid', '')
+    }
 }
 
-// const getTheId = async (event) =>{
+$('#delete').on('click', deleteQuote )
 
-//     await $('#url').val(event.target.attr('src'))
-//     console.log(event.target)
-// }
+ const getTheId = async (event) =>{
 
-$('#quoteshow').on('click', deleteQuote)
+     await $('#url').val(event.target.src)
+     console.log(event.target)
+     console.log(event.target.id)
+
+     $('#delete').attr('data-quoteid', event.target.id)
+ }
+
+
+//$('#quoteshow').on('click', deleteQuote)
 
 
 // Edit a Quote 
@@ -122,7 +153,6 @@ $('#quoteshow').on('click', deleteQuote)
 //       
 //       quoteURL: $nameEditInput.val(),
 //     }
-//     //make our put request
 //     const responde = await fetch(`${URL}/rat/${event.target.id}`,{
 //       method: "put",
 //       headers: {
@@ -135,6 +165,7 @@ $('#quoteshow').on('click', deleteQuote)
     //     await $('#url').val(event.target.attr('src'))
     //     console.log(event.target)
     // }
+    //$('#quoteshow').on('click', editQuote)
 
 
 /*------------------------------------------------------------------------------------------------------------*/
@@ -156,10 +187,3 @@ const allWriters = async ()=>{
 }
 allWriters()
 /*----------------------------------------------------------------------------------------*/
-
-
-$('.createbuttonpoem').on('click', ()=>{
-    let thePoem= $("#selectpoem option:selected" ).text()
-    const outcomePoem = $('<p id="textpoem">').text(`You have chosen ${thePoem}`)
-    $('specificpoem').append(outcomePoem)
-}) 

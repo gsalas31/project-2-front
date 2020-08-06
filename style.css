@@ -151,11 +151,12 @@ h5{
 }
 .options{
     position: absolute;
-    margin-top: 200px;
+    margin-top: 100px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     left:0;
-    padding-left: 40px;
+    padding-left: 90px;
+ 
 }
 .form{
     margin-top: 20px;
@@ -163,10 +164,19 @@ h5{
 #type{
     color: black;
 }
-#find{
-    margin-right: 250px;
+#createbuttonpoem{
+    margin-right: 30px;
 }
-
+.infofrombook{
+    position: absolute;
+    background-color: rgba(189,160,194,0.6);
+    margin-top: 180px;
+    width: 70%;
+    height: 40%;
+}
+#textbook{
+    text-align: center;
+}
 
 
 
