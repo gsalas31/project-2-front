@@ -196,3 +196,99 @@ h4{
 }
 
 /* Media Queries------------------------------------------------------------------------*/
+@media (max-width:1235px){
+    h1{
+        font-size:60px;
+        margin-top: 30px;
+        padding:0px;
+    }
+    .paragraph{
+        width:640px;
+        padding:10px;
+    }
+    p{
+        font-size: 14px;
+    }
+    .quotesshowcase{
+        width:800px;
+        height: 220px;
+    }
+    .userquotes{
+        height: 210px;
+    }
+    h2{
+        font-size:18px;
+    }
+    #editquote{
+        font-size: 18px;
+    }
+    .imgauthor{
+        width:160px;
+        margin: 20px;
+    }
+    .whattoread{
+        margin-top: 80px;
+        height: 440px;
+        justify-self: center;
+    }
+    h3{
+        font-size: 30px;
+    }
+    h5{
+        font-size: 20px;
+    }
+    #editquote{
+        margin-top: 30px;
+    }
+}
+@media (max-width:896px){
+
+    h1{
+        font-size:50px;
+        margin-top: 20px;
+        margin-bottom: 5px;
+       
+    }
+    .paragraph{
+        width:500px;
+        padding:10px;
+        height: 100px;
+
+    }
+    p{
+        font-size: 12px;
+    }
+    .quotesshowcase{
+        width:500px;
+        height: 120px;
+    }
+    .userquotes{
+        height: 110px;
+    }
+    h2{
+        font-size:15px;
+    }
+    #editquote{
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    .imgauthor{
+        width:110px;
+        margin: 20px;
+    }
+    .whattoread{
+        margin-top: 40px;
+        height: 340px;
+        justify-self: center;
+    }
+    h3{
+        font-size: 26px;
+    }
+    h5{
+        font-size: 16px;
+    }
+    #find{
+        margin-right:50px ;
+    }
+
+}

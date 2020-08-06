@@ -1,9 +1,6 @@
 const deployedURL = null // "https://selene31.herokuapp.com";
 const URL = deployedURL ? deployedURL : "http://localhost:3000";
 
-//Global variables 
-
-
 //Functions
 
 /*------------------------------------------------------------------------------------------------------------*/
@@ -25,6 +22,14 @@ getBooks()
 
 // display message when selecting a book
 
+$('.createbuttonbook').on('click', ()=>{
+    let theBook= $("#selectbook option:selected" ).text()
+    const outcomeBook = $('<p id="textbook">').text(`You have chosen ${theBook}`)
+    $('#specificbook').append(outcomeBook)
+  
+})  
+
+
 
 /*------------------------------------------------------------------------------------------------------------*/
 
@@ -43,6 +48,13 @@ const allPoems = async ()=>{
 }
 allPoems()
 
+// display message when selecting a poem
+
+$('.createbuttonpoem').on('click', ()=>{
+    let thePoem= $("#selectpoem option:selected" ).text()
+    const outcomePoem = $('<p id="textpoem">').text(`You have chosen ${thePoem}`)
+    $('specificpoem').append(outcomePoem)
+}) 
 /*------------------------------------------------------------------------------------------------------------*/
 
 //display quotes 
@@ -148,15 +160,6 @@ allWriters()
 
 $('.createbuttonpoem').on('click', ()=>{
     let thePoem= $("#selectpoem option:selected" ).text()
-    const outcomePoem = $('<p>').text(`You have chosen ${thePoem}`)
+    const outcomePoem = $('<p id="textpoem">').text(`You have chosen ${thePoem}`)
     $('specificpoem').append(outcomePoem)
 }) 
-
-
-
-$('.createbuttonbook').on('click', ()=>{
-    let theBook= $("#selectbook option:selected" ).text()
-    const outcomeBook = $('<p>').text(`You have chosen ${theBook}`)
-    $('#specificbook').append(outcomeBook)
-  
-})  
