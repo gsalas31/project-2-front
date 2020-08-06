@@ -2,8 +2,7 @@ const deployedURL = null // "https://selene31.herokuapp.com";
 const URL = deployedURL ? deployedURL : "http://localhost:3000";
 
 //Global variables 
-const deleteButton = document.getElementById('delete')
-let quoteBeingEdited = ''
+
 
 //Functions
 
@@ -86,24 +85,44 @@ const createQuote = async()=>{
 $('#create').on('click', createQuote)
 
 //deleting quotes*/
-
 const deleteQuote = async (event) => {
-
-
-
+    //getTheId()
     const response = await fetch(`${URL}/quotes/${event.target.id}`, {
-      method: "delete"
+    method: "delete"
     })
+    event.target.remove()
+}
 
-  }
-  $('#delete').on('click', deleteQuote)
-  $('#url').on()
+// const getTheId = async (event) =>{
+
+//     await $('#url').val(event.target.attr('src'))
+//     console.log(event.target)
+// }
+
+$('#quoteshow').on('click', deleteQuote)
 
 
 // Edit a Quote 
 
+// const editQuote= async(event) => {
 
+//     const updatingQuote= {
+//       
+//       quoteURL: $nameEditInput.val(),
+//     }
+//     //make our put request
+//     const responde = await fetch(`${URL}/rat/${event.target.id}`,{
+//       method: "put",
+//       headers: {
+//         "Content-Type":"application/json"
+//       },
+//       body: JSON.stringify(updatedRat)
+//     })
+    // const getTheId = async (event) =>{
 
+    //     await $('#url').val(event.target.attr('src'))
+    //     console.log(event.target)
+    // }
 
 
 /*------------------------------------------------------------------------------------------------------------*/
@@ -116,26 +135,28 @@ const allWriters = async ()=>{
 
     data.forEach((writer)=>{
         
+        const $div =$('<div class="picdiv">')
         const $img = $(`<img src="${writer.portrait}">`).addClass("imgauthor")
-        $('.allwriters').append($img)
+        $div.append($img)
+        $('.allwriters').append($div)
         //console.log(writer.portrait)  
     })
 }
 allWriters()
-
-/*------------------------------------------------------------------------------------------------------------*/
-
+/*----------------------------------------------------------------------------------------*/
 
 
+$('.createbuttonpoem').on('click', ()=>{
+    let thePoem= $("#selectpoem option:selected" ).text()
+    const outcomePoem = $('<p>').text(`You have chosen ${thePoem}`)
+    $('specificpoem').append(outcomePoem)
+}) 
 
-/*const allFlip = async ()=>{
-    const response = await fetch(`${URL}/writers`)
-    const data = await response.json()
-    console.log(data)
 
-    data.forEach((writer)=>{
-        const $h6 = $('<h2 id="nameofauthor">').text(writer.name)
-        $(".flip-box-back").append($h6)
-})
-}
-allFlip()*/
+
+$('.createbuttonbook').on('click', ()=>{
+    let theBook= $("#selectbook option:selected" ).text()
+    const outcomeBook = $('<p>').text(`You have chosen ${theBook}`)
+    $('#specificbook').append(outcomeBook)
+  
+})  
