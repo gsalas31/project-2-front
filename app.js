@@ -117,55 +117,55 @@ $('#create').on('click', createQuote)
 
 //deleting quotes*/
 
-const deleteQuote = async (event) => {
+  const deleteQuote = async (event) => {
 
-    if ($('#delete').attr('data-quoteid') !== '') {
+      if ($('#delete').attr('data-quoteid') !== '') {
         const response = await fetch(`${URL}/quotes/${event.target.dataset.quoteid}`, {
-        method: "delete"
-        })
+         method: "delete"
+         })
         
-        allQuotes()
-        $('#url').val('')
-        $('#delete').attr('data-quoteid', '')
-    }
-}
+          allQuotes()
+          $('#url').val('')
+          $('#delete').attr('data-quoteid', '')
+      }
+  }
 
-$('#delete').on('click', deleteQuote )
+  $('#delete').on('click', deleteQuote )
 
- const getTheId = async (event) =>{
+   const getTheId = async (event) =>{
 
-     await $('#url').val(event.target.src)
-     console.log(event.target)
-     console.log(event.target.id)
+       await $('#url').val(event.target.src)
+       console.log(event.target)
+       console.log(event.target.id)
 
-     $('#delete').attr('data-quoteid', event.target.id)
- }
+       $('#delete').attr('data-quoteid', event.target.id)
+       $('.edit').attr('data-quoteid', event.target.id)
+   }
+
+// Edit/Update a Quote 
+
+  const updateQuote= async(event) => {
+      console.log(event.target)
+ 
+      const updatedQuote = {
+        quoteURL: $('#url').val()
+      }
+      const response = await fetch(`${URL}/quotes/${event.target.dataset.quoteid}`,{
+        method: "put",
+        headers: {
+          "Content-Type":"application/json"
+        },
+        body: JSON.stringify(updatedQuote)
+      })
+
+      console.log(await response)
+      allQuotes()
+     $('#url').val('')
+     }
+ $('.edit').on('click', updateQuote)
+ 
 
 
-//$('#quoteshow').on('click', deleteQuote)
-
-
-// Edit a Quote 
-
-// const editQuote= async(event) => {
-
-//     const updatingQuote= {
-//       
-//       quoteURL: $nameEditInput.val(),
-//     }
-//     const responde = await fetch(`${URL}/rat/${event.target.id}`,{
-//       method: "put",
-//       headers: {
-//         "Content-Type":"application/json"
-//       },
-//       body: JSON.stringify(updatedRat)
-//     })
-    // const getTheId = async (event) =>{
-
-    //     await $('#url').val(event.target.attr('src'))
-    //     console.log(event.target)
-    // }
-    //$('#quoteshow').on('click', editQuote)
 
 
 /*------------------------------------------------------------------------------------------------------------*/
@@ -186,4 +186,4 @@ const allWriters = async ()=>{
     })
 }
 allWriters()
-/*----------------------------------------------------------------------------------------*/
+
