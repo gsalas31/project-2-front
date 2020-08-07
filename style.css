@@ -554,19 +554,89 @@ h4{
     }
 }
 
-@media (max-width:483px){
+@media (max-width:469px){
     h1{
-        font-size:25px ;
+        font-size:20px ;
     }
     .paragraph{
         width: 280px;
+        height: 30px;
     }
     p{
-        font-size: 10px;
-        width:280px
+        width:280px;
+    }
+    #quoteshow{
+        width:290px;
+        height: 98px;
+    }
+    .infofrombook{
+        width:320px;
+        height: 120px;
     }
     .imgauthor{
-        width: 55px;
-        margin: 10px;
+        width:60px;
+        margin:10px;
+
+    }
+    #biowriter{
+        width:320px;
+    }
+    .buttons{
+        margin-top:5px;
+    }
+    h2{
+        font-size: 10px;
+    }
+    p{
+        font-size: 8px;
     }
 }
+
+@media (max-width:321px){
+    .infofrombook{
+        width:300px;
+        height: 86px;
+        margin-left: 0px;
+    }
+    #biowriter{
+        width:290px;
+    }
+    .options{
+        width:314px;
+    }
+    .imgauthor{
+        width:50px;
+        margin:10px;
+    }
+    .paragraph{
+        width:260 ;
+        height: 36px;
+        padding:5px;
+    }
+    .userquotes{
+        height: 90px;
+        margin: 10px
+    }
+    #quoteshow{
+        margin-top: 5px;
+        height: 78px;
+    }
+    #wordpress{
+        width:30px;
+    }
+    #linkedin{
+        width: 30px;
+    }
+    #git{
+        width: 30px;
+    }
+    footer{
+        height: 50px;
+    }
+    h1{
+        margin-bottom: 5px;
+    }
+    
+
+}
+
