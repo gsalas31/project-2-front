@@ -1,4 +1,4 @@
-const deployedURL = null // "https://selene31.herokuapp.com";
+const deployedURL =  "https://selene31.herokuapp.com";
 const URL = deployedURL ? deployedURL : "http://localhost:3000";
 
 //Functions
