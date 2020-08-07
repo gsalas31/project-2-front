@@ -104,11 +104,15 @@ p{
     height:310px;
     width: auto
 }
+
 #editquote{
     color: rgb(88,88,88);
     font-size: 20px;
     height: 20px;
-
+    margin-top: 10px;
+}
+.buttons{
+    margin-top: 10px;
 }
 /*-------WRITTERS SECTION-----------------------------------------*/
 
@@ -129,7 +133,7 @@ p{
     background-color: rgba(255,255,255, 0.6) ;
     right: 80px;
     left:80px;
-    height: 640px;
+    height: 740px;
     margin-top: 60px;
     justify-content: center;
 
@@ -153,9 +157,6 @@ h5{
     margin-top: 100px;
     display: flex;
     flex-direction: row;
-    left:0;
-    padding-left: 90px;
- 
 }
 .form{
     margin-top: 20px;
@@ -172,15 +173,44 @@ h5{
     margin-top: 180px;
     width: 80%;
     height: 70%;
+    margin-left: 40px;
 }
+.options{
+    margin-left: 40px ;
+}
+.last{
+    align-content: center;
+}
+
+/* Editing book's & poem's info -----------------*/
 #textbook{
+    font-size: 22px;
     text-align: center;
+    color: rgba(88,88,88);
+    height: auto;
+    margin-top: 20px
 }
+#author{
+    text-align: center;
+    color:rgba(88,88,88);
+    height: auto;
+}
+#dob{
+    text-align: center;
+    color:rgba(88,88,88);
+    height: auto;
+}
+#pages{
+    color:rgba(88,88,88);
+    padding:20px;
+    padding-bottom: 0px;
+    height: auto;
+}
+#biowriter{
+    color:rgba(88,88,88);
+    padding:20px;
 
-#selectpoem{}
-
-
-
+}
 
 /*-------FOOTER SECTION------------------------------------------*/
 footer{
@@ -206,111 +236,337 @@ h4{
 }
 
 /* Media Queries------------------------------------------------------------------------*/
-@media (max-width:1235px){
+@media (max-width:1231px){
     h1{
-        font-size:60px;
-        margin-top: 30px;
-        padding:0px;
+        margin-top: 30px ;
+    }
+    #read{
+        height: 710px;
+    }
+}
+
+@media (max-width:1167px){
+    h1{
+        font-size: 45px;
+        padding: 0px;
     }
     .paragraph{
-        width:640px;
         padding:10px;
+        margin-top:0px;
+        height: auto;
     }
     p{
-        font-size: 14px;
+        margin-bottom:5px;
+        margin-top: 0px;
+        margin: 0 auto;
     }
-    .quotesshowcase{
+    .buttons{
+        margin-top: 20px;
+    }
+    #quoteshow{
         width:800px;
-        height: 220px;
+        height: 420px ;
     }
     .userquotes{
         height: 210px;
     }
-    h2{
-        font-size:18px;
-    }
-    #editquote{
-        font-size: 18px;
-    }
     .imgauthor{
-        width:160px;
-        margin: 20px;
+        width: 186px;
     }
-    /* .whattoread{
-        margin-top: 80px;
-        height: 440px;
-        justify-self: center;
-    }*/
     h3{
-        font-size: 30px;
+        margin: 20px ;
     }
-    h5{
-        font-size: 20px;
+    .options{
+       margin-top: 80px;
     }
-    #editquote{
+    #read{
         margin-top: 30px;
+        height: 600px;
+    }
+    .infofrombook{
+        margin-top: 140px;
+        height: 440px;
     }
 }
 
-@media (max-width:952px){
-
-.options{
-    display: flex;
-    flex-direction: column;
-    margin-top:60px ;
-    padding-left: 30px ;
-}
-
-}
-
-@media (max-width:896px){
-
+@media (max-width:1084px){
     h1{
-        font-size:50px;
-        margin-top: 20px;
-        margin-bottom: 5px;
-       
+        font-size: 40px;
+    }
+    #quoteshow{
+        height:380px ;
+    }
+}
+@media (max-width:1020px){
+    h1{
+        margin:20px;
+    }
+    h3{
+        width:400px;
+    }
+    h2{
+        font-size: 15px;
+        margin-bottom: 2px;
     }
     .paragraph{
-        width:500px;
-        padding:10px;
-        height: 100px;
-
+        width: 800px;
+    }
+    p{
+        font-size: 15px;
+        width:780px;
+    }
+    #quoteshow{
+        height: 320px;
+    }
+    .imgauthor{
+        margin: 20px;
+        padding: 0px;
+    }
+    #biowriter{
+        width: 620px;
+        margin: 0 auto;
+    }
+}
+@media (max-width:960px){
+    #read{
+        margin-top: 20px;
+        height: 560px;
+    }
+    .infofrombook{
+        height: 400px;
+    }
+    h3{
+        font-size: 20px;
+    }
+    #biowriter{
+        width: 550px ;
+        margin: 0 auto;
+    }
+    #textbook{
+        width: 500px;
+        margin: 0 auto;
+    }
+    #author{
+        width:200px;
+        margin: 0 auto;
+    }
+    #dob{
+        width:100px;
+        margin: 0 auto;
+    }
+    #pages{
+        width:200px;
+        margin-left: 20px;
+    }
+    #editquote{
+        margin-bottom: 5px;
+        font-size: 15px;
+    }
+    .imgauthor{
+        width: 160px;
+    }
+}
+@media (max-width:896px){
+    h1{
+        margin:10px
+    }
+    #quoteshow{
+        height: 280px;
+        width: 600px;
+    }
+    #editquote{
+        font-size: 15px;
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+    h2{
+        font-size: 12px;
     }
     p{
         font-size: 12px;
+        width: 600px;
     }
-    .quotesshowcase{
-        width:500px;
-        height: 120px;
+    .paragraph{
+        width: 600px;
     }
-    .userquotes{
-        height: 110px;
+    .imgauthor{
+        width: 150px ;
+    }
+    #biowriter{
+        width: 460px;
+    }
+    #read{
+        height: 500px;
+    }
+    .infofrombook{
+        height: 340px;
+    }
+}
+
+@media (max-width:816px){
+    .options{
+       flex-direction: column ;
+       margin:auto;
+       margin-top: 40px;
+    }
+    #quoteshow{
+        height:200px ;
+        width: 500px;
+    }
+    p{
+        width: 480px;
+        height: 60px;
+    }
+    .paragraph{
+        width: 500px;
+    }
+    .infofrombook{
+        height:300px ;
+    }
+    #read{
+        height: 450px;
+    }
+    .imgauthor{
+        width:130px
+    }
+    #biowriter{
+        font-size: 11px;
+        width:400px;
+    }
+}
+
+@media (max-width:710px){
+    h3{
+        font-size: 15px;
+    }
+    .options{
+        margin-top: 24px;
+    }
+    .infofrombook{
+       margin-top: 120px;
+       height: 270px;
+    }
+    #textbook{
+        font-size:15px ;
+        padding-top: 5px;
+        margin:0 auto;
+        width: 400px;
+    }
+    #pages{
+        padding:0px;
+    }
+    #biowriter{
+        padding-top:0px;
+        width: 360px;
+    }
+    #read{
+        height: 400px;
     }
     h2{
-        font-size:15px;
+        margin:0px;
     }
-    #editquote{
-        font-size: 16px;
+    #quoteshow{
+        margin-top: 10px;
+    }
+    .buttons{
         margin-top: 10px;
     }
     .imgauthor{
-        width:110px;
-        margin: 20px;
+        width:120px;
     }
-    /* .whattoread{ 
-        margin-top: 40px;
-        height: 340px;
-        justify-self: center;
-    }*/
     h3{
-        font-size: 26px;
+        width:200px;
     }
-    h5{
-        font-size: 16px;
+}
+@media (max-width:655px){
+    .paragraph{
+        width: 380px;
     }
-    #find{
-        margin-right:50px ;
+    p{
+        width:380px;
+        height:40px;
     }
+    #quoteshow{
+        height: 100px;
+        width: 420px;
+    }
+    .imgauthor{
+        width:110px;
+    }
+    #read{
+        height: 280px;
+        width: 450px;
+        margin: 0;
+    
+    }
+    .infofrombook{
+        width: 410px;
+        height: 190px;
+        margin-left: 20px;
+        overflow-y: scroll;
+     }
+     #biowriter{
+         width: 360px;
+         margin:0 auto;
+         padding:0;
+     }
+     #textbook{
+         width:200px;
+     }
 
+}
+@media (max-width:592px){
+    .imgauthor{
+        width: 96px;
+    }
+}
+@media (max-width:540px){
+    .imgauthor{
+        width: 86px;
+    }
+}
+
+@media (max-width:501px){
+    .imgauthor{
+        width: 80px;
+    }
+    h1{
+        font-size: 30px;
+    }
+    .paragraph{
+        height: 60px;
+    }
+    .buttons{
+        width: 280px ;
+    }
+    #url{
+        width:123px;
+        font-size: 10px;
+    }
+    button{
+        padding:1px;
+        font-size: 10px;
+    }
+    #editquote{
+        width:280px;
+        height: auto;
+        font-size: 10px;
+    }
+}
+
+@media (max-width:483px){
+    h1{
+        font-size:25px ;
+    }
+    .paragraph{
+        width: 280px;
+    }
+    p{
+        font-size: 10px;
+        width:280px
+    }
+    .imgauthor{
+        width: 55px;
+        margin: 10px;
+    }
 }

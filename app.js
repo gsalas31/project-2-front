@@ -28,11 +28,19 @@ const showBook = async ()=>{
     const data = await response.json()
     console.log(data)
 
-    const outcomeBook = $('<p id="textbook">').text(`You have chosen ${data.title} written by ${data.writer.name}`)
-    const outcomeBook2 = $("<p id='biowriter'>").text(`Biography: ${data.writer.bio.description}`)
+    const outcomeBook = $('<p id="textbook">').text(`${data.title}`)
+    const outcomeBook2 = $('<p id="author">').text(`written by: ${data.writer.name}`)
+    const outcomeBook3 = $("<p id='dob'>").text(` ${data.writer.bio.dob}`)
+    const outcomeBook5 = $("<p id='pages'>").text(`Number of Pages: ${data.pages}`)
+    const outcomeBook6 = $("<p id='biowriter'>").text(`${data.writer.bio.description}`)
+
     $('.infofrombook').empty()
     $('.infofrombook').append(outcomeBook)
     $('.infofrombook').append(outcomeBook2)
+    $('.infofrombook').append(outcomeBook3)
+    $('.infofrombook').append(outcomeBook5)
+    $('.infofrombook').append(outcomeBook6)
+   
 
 }
     $('.createbuttonbook').on('click', showBook)
@@ -62,10 +70,16 @@ const showPoem = async ()=>{
     const data = await response.json()
     console.log(data)
 
-    const outcomePoem = $('<p id="textbook">').text(`You have chosen ${data.title}`)
+    const outcomePoem = $('<p id="textbook">').text(`${data.title}`)
+    const outcomePoem2 = $('<p id="author">').text(`written by: ${data.writer.name}`)
+    const outcomePoem3 = $('<p id="dob">').text(` ${data.writer.bio.dob}`)
+    const outcomePoem4 = $('<p id="biowriter">').text(`${data.writer.bio.description}`)
+
     $('.infofrombook').empty()
     $('.infofrombook').append(outcomePoem)
-
+    $('.infofrombook').append(outcomePoem2)
+    $('.infofrombook').append(outcomePoem3)
+    $('.infofrombook').append(outcomePoem4)
 }
 $('#createbuttonpoem').on('click', showPoem)
 
@@ -164,10 +178,6 @@ $('#create').on('click', createQuote)
      }
  $('.edit').on('click', updateQuote)
  
-
-
-
-
 /*------------------------------------------------------------------------------------------------------------*/
 
 //display writers 
